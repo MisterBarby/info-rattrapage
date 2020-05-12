@@ -93,9 +93,9 @@ public class Vigenere
 
     public static string GuessKeyWithLength(string cypherText, int keyLength)
     {
-        int j = 0;
+        int j = 1;
         string strKey = "";
-        while (j < keyLength)
+        while (j <= keyLength)
         {
             string text = Tools.Extract(cypherText, j, keyLength);
             int[] histo = Tools.Histogram(text);

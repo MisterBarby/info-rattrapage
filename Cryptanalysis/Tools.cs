@@ -100,38 +100,39 @@ public static class Tools
 
     public static string Extract(string str, int start, int step)
     {
-        if (step < 1)
-        {
-            throw new DataException("step must be superior to 0");
-        }
-
         string strStart = "";
         int i = start - 1;
         int indexStep = 1;
         string strEnd = "";
-        while (i < str.Length)
+        if (step < 1)
         {
-            strStart += str[i];
-            i += 1;
+            throw new DataException("step must be superior to 0");
         }
-
-        i = start - 1;
-        while (i < str.Length - start)
+        else
         {
-            if (indexStep > step)
+            while (i < str.Length)
             {
-                indexStep = 1;
+                strStart += str[i];
+                i += 1;
             }
 
-            if (indexStep == 1)
+            i = 0;
+            while (i < strStart.Length)
             {
-                strEnd += strStart[i];
-            }
+                if (indexStep > step)
+                {
+                    indexStep = 1;
+                }
 
-            i += 1;
-            indexStep += 1;
+                if (indexStep == 1)
+                {
+                    strEnd += strStart[i];
+                }
+
+                i += 1;
+                indexStep += 1;
+            } 
         }
-
         return strEnd;
     }
 }

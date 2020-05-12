@@ -7,7 +7,7 @@ internal static class Program
     private static void Main()
     {
         // Put your tests here.
-        //Test();
+        Test();
         string text = "Texte original: La triche consiste a recevoir, en situation de concurrence,"
                       + "une recompense indue grace a ses capacites a contourner ou enfreindre les"
                       + "regles juridiques ou morales (principes de vie en societe, reglementation,"
@@ -24,7 +24,10 @@ internal static class Program
                       + "ne triche pas necessairement tout le temps, mais se repose plutot sur"
                       + "une tactique trompeuse au point d'en acquerir la reputation.";
         Console.WriteLine(Vigenere.GuessKeyWithLength(text, 3));
-        
+        string test = Vigenere.GuessKeyWithLength(text, 3);
+        int a = 0;
+
+
 
     }
 

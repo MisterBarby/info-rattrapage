@@ -22,7 +22,7 @@ namespace Cryptanalysis
             {
                 if (Tools.LetterIndex(msg[i]) == -1)
                 {
-
+                    endStr += msg[i];
                 }
                 else
                 {
@@ -43,7 +43,7 @@ namespace Cryptanalysis
             {
                 if (Tools.LetterIndex(cypherText[i]) == -1)
                 {
-
+                    endStr += cypherText[i];
                 }
                 else
                 {
