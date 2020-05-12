@@ -19,29 +19,76 @@ public class Vigenere
         int i = 0;
         while (i < Key.Length)
         {
-            
+            if (Tools.LetterIndex(Key[i]) == -1)
+            {
+                
+            }
+            else
+            {
+                KeyEnd += Key[i];
+            }
+
+            i += 1;
         }
         return KeyEnd;
     }
     
     public string Encrypt(string msg)
     {
+        string usedKey = _CleanKey(Key);
         int i = 0;
+        int j = 0;
+        string crypted = "";
         while (i < msg.Length)
         {
-            int j = 0;
-            while (j < Key.Length )
+            if (j == usedKey.Length)
             {
-                
+                j = 0;
             }
+            
+            if (Tools.LetterIndex(msg[i]) == -1)
+            {
+                crypted += msg[i];
+            }
+            else
+            {
+                crypted += Tools.RotChar(msg[i], Tools.LetterIndex(usedKey[j]));
+                j += 1;
+            }
+
+            i += 1;
         }
 
-        return "ee";
+        return crypted;
     }
 
     public string Decrypt(string cypherText)
     {
-        throw new NotImplementedException();
+        string usedKey = _CleanKey(Key);
+        int i = 0;
+        int j = 0;
+        string crypted = "";
+        while (i < cypherText.Length)
+        {
+            if (j == usedKey.Length)
+            {
+                j = 0;
+            }
+            
+            if (Tools.LetterIndex(cypherText[i]) == -1)
+            {
+                crypted += cypherText[i];
+            }
+            else
+            {
+                crypted += Tools.RotChar(cypherText[i], -Tools.LetterIndex(usedKey[j]));
+                j += 1;
+            }
+
+            i += 1;
+        }
+
+        return crypted;
     }
 
     public static string GuessKeyWithLength(string cypherText, int keyLength)

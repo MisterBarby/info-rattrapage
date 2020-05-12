@@ -17,6 +17,7 @@ internal static class Program
         Test_Modulus_PositiveNegative();
         Test_Modulus_NegativeNegative();
 
+        
         Test_RotChar_LowerCase();
         Test_RotChar_UpperCase();
         Test_RotChar_PositiveWrapping();

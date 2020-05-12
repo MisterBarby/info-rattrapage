@@ -63,6 +63,7 @@ public static class Tools
         {
             int index = LetterIndex(str[i]);
             histo[index] += 1;
+            i += 1;
         }
 
         return histo;
@@ -70,7 +71,22 @@ public static class Tools
     
     public static string FilterLetters(string str)
     {
-        throw new NotImplementedException();
+        string strEnd = "";
+        int i = 0;
+        while (i < str.Length)
+        {
+            if (LetterIndex(str[i]) == -1)
+            {
+                
+            }
+            else
+            {
+                strEnd += str[i];
+            }
+
+            i += 1;
+        }
+        return strEnd;
     }
 
     public static string Extract(string str, int start, int step)
