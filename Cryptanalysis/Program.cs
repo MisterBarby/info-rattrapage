@@ -8,6 +8,7 @@ internal static class Program
     {
         // Put your tests here.
         Test();
+
     }
 
     private static void Test()

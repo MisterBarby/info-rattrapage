@@ -67,7 +67,7 @@ public class Vigenere
         string usedKey = _CleanKey(Key);
         int i = 0;
         int j = 0;
-        string crypted = "";
+        string decrypted = "";
         while (i < cypherText.Length)
         {
             if (j == usedKey.Length)
@@ -77,18 +77,18 @@ public class Vigenere
             
             if (Tools.LetterIndex(cypherText[i]) == -1)
             {
-                crypted += cypherText[i];
+                decrypted += cypherText[i];
             }
             else
             {
-                crypted += Tools.RotChar(cypherText[i], -Tools.LetterIndex(usedKey[j]));
+                decrypted += Tools.RotChar(cypherText[i], -Tools.LetterIndex(usedKey[j]));
                 j += 1;
             }
 
             i += 1;
         }
 
-        return crypted;
+        return decrypted;
     }
 
     public static string GuessKeyWithLength(string cypherText, int keyLength)

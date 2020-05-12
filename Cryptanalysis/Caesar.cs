@@ -28,6 +28,8 @@ namespace Cryptanalysis
                 {
                     endStr += Tools.RotChar(msg[i], Key);
                 }
+
+                i += 1;
             }
 
             return endStr;
@@ -47,6 +49,7 @@ namespace Cryptanalysis
                 {
                     endStr += Tools.RotChar(cypherText[i], -Key);
                 }
+                i += 1;
             }
 
             return endStr;
