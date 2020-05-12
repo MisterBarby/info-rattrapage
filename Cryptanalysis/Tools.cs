@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Cryptanalysis
 {
@@ -91,7 +92,39 @@ public static class Tools
 
     public static string Extract(string str, int start, int step)
     {
-        throw new NotImplementedException();
+        if (step < 1)
+        {
+            throw new DataException("step must be superior to 0");
+        }
+
+        string strStart = "";
+        int i = start - 1;
+        int indexStep = 1;
+        string strEnd = "";
+        while (i < str.Length)
+        {
+            strStart += str[i];
+            i += 1;
+        }
+
+        i = start - 1;
+        while (i < str.Length - start)
+        {
+            if (indexStep > step)
+            {
+                indexStep = 1;
+            }
+
+            if (indexStep == 1)
+            {
+                strEnd += strStart[i];
+            }
+
+            i += 1;
+            indexStep += 1;
+        }
+
+        return strEnd;
     }
 }
 }
