@@ -62,8 +62,16 @@ public static class Tools
         int i = 0;
         while (i < str.Length)
         {
-            int index = LetterIndex(str[i]);
-            histo[index] += 1;
+            if (LetterIndex(str[i]) == -1)
+            {
+                
+            }
+            else
+            {
+                int index = LetterIndex(str[i]);
+                histo[index] += 1;
+            }
+            
             i += 1;
         }
 
