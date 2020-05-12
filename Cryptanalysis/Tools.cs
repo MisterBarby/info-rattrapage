@@ -106,7 +106,7 @@ public static class Tools
         string strEnd = "";
         if (step < 1)
         {
-            throw new DataException("step must be superior to 0");
+            throw new ArgumentException("step must be superior to 0");
         }
         else
         {
